@@ -7,6 +7,9 @@ defmodule ExrestWeb.Router do
 
   scope "/api", ExrestWeb do
     pipe_through :api
+    get "/ping", PostController, :ping
+    post "/post", PostController, :create
+    get "/posts", PostController, :get_all
   end
 
   # Enables LiveDashboard only for development
